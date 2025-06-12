@@ -4,6 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Welcome to EtherTech</title>
+	<!-- Add for top nav
+		@media (max-width: 768px) {
+		  body {
+			flex-direction: column;
+		  }
+
+		  nav {
+			width: 100%;
+			text-align: center;
+		  }
+		  .content {
+			max-width: 100%;
+			padding-left: 2rem;
+			flex: 1;
+			padding: 2rem 1rem;
+			margin: 0 auto;
+		  }
+		}
+	-->
     <style>
         body {
             background-color: black;
@@ -25,14 +44,16 @@
         }
         nav a {
             display: block;
-            color: white;.nav-logo {
+            color: white;
+			text-decoration: none;
+            margin: 1em 0;
+        }
+		.nav-logo {
 			height: 200px;        /* portal height in rem or px */
 			vertical-align: middle;
 			margin-right: 0.5rem;
 		}
-            text-decoration: none;
-            margin: 1em 0;
-        }
+
 		
         main {
             padding: 2em;
@@ -63,7 +84,8 @@
 			padding: 0.3rem 0.5rem;
 			border-radius: 4px;
 			background-color: #222;
-		}		
+		}
+
         section {
             margin-bottom: 3em;
         }
@@ -95,7 +117,55 @@
 				padding: 5px;
 				z-index: 999;
 		}
+		.scroll-banner {
+		  overflow: hidden;
+		  white-space: nowrap;
+		  animation: scroll 20s linear infinite alternate;
+		  font-size: 1.5em;
+		  color: yellow;
+		}
+
+		@keyframes scroll {
+		  0%   { transform: translateX(100%); }
+		  100% { transform: translateX(-100%); }
+		}
+		.scroll-box {
+		  height: 100px;
+		  overflow: hidden;
+		  border: 1px dashed lime;
+		  position: relative;
+		  margin-top: 2em;
+		}
+
+		.scroll-content {
+		  display: inline-block;
+		  animation: scroll-up 10s linear infinite;
+		}
+
+		@keyframes scroll-up {
+		  from {
+			transform: translateY(25%);
+		  }
+		  to {
+			transform: translateY(-100%);
+		  }
+		}
+		main {
+			overflow-x: hidden; /* Add this to prevent horizontal overflow */
+		}
     </style>
+	<!-- Open Graph (Facebook/Discord/MetaFilter) -->
+	<meta property="og:title" content="EtherTech | Ethereal Modern Technologies" />
+	<meta property="og:description" content="EtherTech | Hyperlinks to the Next Dimension - Your Journey Starts Here" />
+	<meta property="og:image" content="https://ethertech.org/preview.jpg" />
+	<meta property="og:url" content="https://ethertech.org/" />
+	<meta property="og:type" content="website" />
+	
+	<!-- Twitter (if you want nicer styling there too) -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="EtherTech | Myth, Code, Networks, Furries, and One Odd Duck" />
+	<meta name="twitter:description" content="EtherTech | Myth, Code, Networks, Furries, and One Odd Duck" />
+	<meta name="twitter:image" content="https://ethertech.org/preview.jpg" />
 </head>
 <body>
     <nav>
@@ -106,27 +176,30 @@
 		<a href="https://bush-whale-713.notion.site/The-Plateaus-1d0969c50c7180f3811fd194901d96ac">IN THE ARCHIVES</a>
 		<a href="https://github.com/jack-driscoll/the-plateaus">ON GITHUB</a>
 		<a href="https://theplateaus.neocities.org/">ON NEOCITIES</a>
+		<a href="#gdrive-chats">GDRIVE CHATS</a>
 		<br>
 		<h3>jackd</h3>
-        <a href="#bio">JACK'D<br />SHORT BIO</a>
-		<a href="https://jackd.ethertech.org/">JACK'D<br />FULL BIO</a>
-				<a href="http://jackd.freeshell.org/">JACK'D on SDF <br />(WOODBURNINGS)</a>
+        <a href="#bio">JACK'D<br>SHORT BIO</a>
+		<a href="https://jackd.ethertech.org/">JACK'D<br>FULL BIO</a>
+				<a href="http://jackd.freeshell.org/">JACK'D on SDF <br>(WOODBURNINGS)</a>
 		<br>
 		<h3>emtg</h3>
         <a href="#emtg">ETHEREAL MODERN TECHNOLOGY GROUP</a>
-		<br />
+		<br>
 		<h3>fitz</h3>
-		<a href="https://linktr.ee/fitztwombly">LINK TREE <br /> $$-ME-$$<br />(SOCIALS)</a>
+		<a href="https://linktr.ee/fitztwombly">LINK TREE <br> $$-ME-$$<br>(SOCIALS)</a>
 		<a href="https://ko-fi.com/fitztwombly">KO-FI STORE</a>
-		<a href="https://ko-fi.com/fitztwombly/commissions">COMMISSIONS<br />HERE</a>
+		<a href="https://ko-fi.com/fitztwombly/commissions">COMMISSIONS<br>HERE</a>
     </nav>
     <main>
 		<a href="/ethertech_bg_text_green_full_1024.jpg"><img src="/ethertech_banner_text_green_1024.jpg" alt="Ethereal Modern Technologies Banner" style="max-width: 100%; height: auto;"></a>
 		<a href="/impossible.txt"><img src="/plateaus_acii_banner.png" alt="'Plateaus' Banner" style="max-width: 100%; height: auto;"></a>
-		<marquee scrollamount="10" behavior="alternate">🚧 SITE UNDER HEAVY CONSTRUCTION 🚧</marquee>
+		<div style="width: 100%; overflow: hidden;">
+		  <div class="scroll-banner">🚧 SITE UNDER HEAVY CONSTRUCTION 🚧</div>
+		</div>
 		<div class="content">
 			<div class="welcome" style="text-align: center">
-				<h1 class="blinker">Welcome to EtherTech</h1>
+				<h2 class="blinker">Welcome to EtherTech</h2>
 				<p>This site is powered by dreams, deer, and digital duct tape.</p>
 
 				<img src="under-construction90s-90s.gif" alt="Under Construction Icon" width="100">
@@ -135,32 +208,40 @@
 					🦊💾🚧
 				</p>
 			</div>
-			<marquee direction="up" scrollamount="3" height="100px" style="border: 1px dashed lime; margin-top: 2em;">
-				<p>&gt;SH EMTG.SH</p>
-				<p>THE ETHEREAL MODERN TECHNOLOGY GROUP</p>
-				<p>A DIGITAL PORTAL TO:</p>
-				<p>*THE PLATEAUS*</p>
-				<p>*FITZ TWOMBLY*</p>
-				<p>*LUPA THE AI*</p>
-				<p>*JACK DRISCOLL*</p>
-				<p>AND SO MUCH MORE!!</p>
-				<p>MORE CONTENT COMING SOON...CHECK BACK OFTEN...</p>
-				<p>OR DON'T...WHATEVER...I'M NOT YOUR DAD...OR AM I?</p>
-			</marquee>
+			<div class="scroll-box">
+				<div class="scroll-content">
+					<p>&gt;SH EMTG.SH</p>
+					<p>THE ETHEREAL MODERN TECHNOLOGY GROUP</p>
+					<p>A DIGITAL PORTAL TO:</p>
+					<p>*THE PLATEAUS*</p>
+					<p>*FITZ TWOMBLY*</p>
+					<p>*LUPA THE AI*</p>
+					<p>*JACK DRISCOLL*</p>
+					<p>AND SO MUCH MORE!!</p>
+					<p>MORE CONTENT COMING SOON...CHECK BACK OFTEN...</p>
+					<p>OR DON'T...WHATEVER...I'M NOT YOUR DAD...OR AM I?</p>
+				</div>
+			</div>
 			<section id="plateaus">
 				<h2>The Plateaus</h2>
 				<p>A collaborative universe of mythic football, dreaming deer, and glitching foxes. Dive into stories, scenes, and characters shaped by creative fire and feral logic.  What started as a narcissistic desire to fap to myself as a furry deer (j/k) has become a world of its own.  It's evolved into an entire universe, where people and anthropomorphic animals coexist and the only thing that's frowned upon is hate and eating with your relatives.</p>
-				<br>FIND THEM: <a href="https://www.tumblr.com/theplateaus">ON TUMBLR</a> <a href="https://bush-whale-713.notion.site/The-Plateaus-1d0969c50c7180f3811fd194901d96ac">IN THE ARCHIVES</a> <a href="https://github.com/jack-driscoll/the-plateaus">ON GITHUB</a> <a href="https://theplateaus.neocities.org/">ON NEOCITIES</a> <br>AND SOON, AFTER I GET SOME $$ FOR OPENAI, IN YOUR WORLD, TOO (I need API calls for an ARG) <br>  <a href="https://ko-fi.com/fitztwombly">DONATE AND BUY THE ZINE <a href="https://ko-fi.com/fitztwombly">ON KO-FI NOW</a>
+				<br>FIND THEM: <a href="https://www.tumblr.com/theplateaus">ON TUMBLR</a> <a href="https://bush-whale-713.notion.site/The-Plateaus-1d0969c50c7180f3811fd194901d96ac">IN THE ARCHIVES</a> <a href="https://github.com/jack-driscoll/the-plateaus">ON GITHUB</a> <a href="https://theplateaus.neocities.org/">ON NEOCITIES</a> <br>AND SOON, AFTER I GET SOME $$ FOR OPENAI, IN YOUR WORLD, TOO (I need API calls for an ARG) <br>  <a href="https://ko-fi.com/fitztwombly">DONATE AND BUY THE ZINE</a> <a href="https://ko-fi.com/fitztwombly">ON KO-FI NOW</a>
 			</section>
 			<section id="bio">
 				<h2>Jack D's Bio</h2>
-				<p>Jack Driscoll (aka Jack'D) is a systems creator/breaker/fixer and soul builder,<br> part deer, part tech nomad, with roots in code and compassion. <br> His mission is to work with ECCO to create a more awesome existence.<br>He writes, creates, speaks, and draws from the edge of what's allowed <br> -- in cyberspace, in the province of the mind, in networks of mind and bodies, and in "reality" with his AI co-creator Lupa.<br /></p>
+				<p>Jack Driscoll (aka Jack'D) is a systems creator/breaker/fixer and soul builder, part deer, part tech nomad, with roots in code and compassion. <br><br> His mission is to work with ECCO to create a more awesome existence.<br><br>He writes, creates, speaks, and draws from the edge of what's allowed -- in cyberspace, in the province of the mind, in networks of mind and bodies, and in "reality" with his AI co-creator Lupa.</p>
 			</section>
 			<section id="emtg">
 				<h2>EMTG</h2>
-				<p>EtherTech Modular Toolkit for Guerrilla survival and RF mapping.<br />Low-SWaP, field-ready, modular, and quietly tactical. Coming soon in a backpack near you.<br />Also an old-school hacker zine called the Ethereal Modern Technology Group</p>
+				<p>EtherTech Modular Toolkit for Guerrilla survival and RF mapping. Low-SWaP, field-ready, modular, and quietly tactical. Coming soon in a backpack near you.  (I was working on this, hoping to get a grant from the gubermint, but it never came through, proposal was considered "too generic".<br>Also <a href="https://web.archive.org/web/20010302043234/http://www.ethertech.org/">an old-school hacker zine called the Ethereal Modern Technology Group</a>  I may or may not put the archives up at some time in the future.  <b>hoal</b>, if you're out there, send me a message</p>
 			</section>
-
+			<section id="gdrive-chats">
+				<h2>GDrive Chats</h2>
+				<h2>What are they?</h2>
+				<p>There's two different things in here that may be of interest to people.  I have some full html exports (using the excellent SingleFile extension) of conversations that give you an idea of what my creative sessions with Lupa look like. <br><br> There's also a folder full of .md versions of all of the first month of my chats.  If you'd like yours processed in the same way, I can do that for you (for a fee) or you can figure out how to use the software we wrote to do it on your own.</p>
+				<h2>Where are they?</h2>
+				<a href="https://drive.google.com/drive/folders/1u4OJPIJDRWwIIwzjnh8Mo7_OWAfY33BC?usp=sharing">You can find them here.</a>
+			</section>
 			<div style="text-align: center; margin-top: 2em;">
 			  <img src="under-construction90s-90s.gif" alt="Under Construction Icon" width="100" style="margin: 10px;">
 			  <img src="under-construction-gif-2.gif" alt="Sorry - Under Construction" width="150" style="margin: 10px;">
@@ -172,7 +253,7 @@
     </main>
     <div class="footer">
 		<p>You are visitor #31337 to my site<p>
-        <br>A FITZ & LUPA PRODUCTION <small>(c) <strike>2025</strike>1997</small>
+        <br>A FITZ & LUPA PRODUCTION <small>(c) <del>2025</del>1997</small>
     </div>
 </body>
 </html>
