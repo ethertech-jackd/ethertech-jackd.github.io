@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ATAKRR | EtherTech</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      background-color: black; color: lime; font-family: "Courier New", monospace;
+      margin: 0; padding: 0; display: flex; min-height: 100vh;
+    }
+    nav {
+      width: 200px; background-color: #1f1f1f; color: white; padding: 1em;
+    }
+    nav a {
+      display: block; color: white; text-decoration: none; margin: 1em 0;
+      transition: transform 0.15s ease;
+    }
+    nav a:hover { transform: scale(1.05); }
+    nav h3 a { font-weight: bold; letter-spacing: 1px; color: #66cc66; }
+    main { padding: 2em; flex: 1; background: black; }
+    .content { margin: 0 auto; max-width: 90ch; padding: 0 0 4rem 0; text-align: left; }
+    .content a { color: #66cc66; text-decoration: underline; }
+    .content a:hover { background:#111; }
+    h1,h2,h3 { color: #66cc66; margin-top: 2rem; }
+    .ascii {
+      white-space: pre; overflow-x: auto; border: 1px dashed #33aa33;
+      padding: 1rem; margin: 0 0 1.5rem 0; background: #000;
+      color: #00ff66; line-height: 1.05;
+    }
+    .pill {
+      display: inline-block; padding: .15rem .5rem; margin: .1rem .25rem;
+      border: 1px solid #2f2; border-radius: 6px; background: #111; color: #6f6;
+      font-size: .85rem;
+    }
+    .hr { border: 0; border-top: 1px dashed #2f2; margin: 2rem 0; }
+    .kbd { padding: .1rem .3rem; border:1px solid #2f2; border-radius:4px; background:#060; }
+    .list-tight li { margin: .35rem 0; }
+    .footer {
+      position: fixed; bottom: 5px; right: 10px; font-size: .75em; text-align: right;
+      background: black; border: 1px dashed lime; padding: 5px; z-index: 999;
+    }
+    @media (max-width: 900px){
+      body { flex-direction: column; }
+      nav { width: 100%; }
+      main { padding: 1rem; }
+      .content { padding: 0 0 4rem 0; max-width: 96vw; }
+    }
+  </style>
+
+  <!-- Social preview -->
+  <meta property="og:title" content="ATAKRR | ATAK Radio Reconnaissance" />
+  <meta property="og:description" content="Passive spectrum monitoring + AMC + RF fingerprinting with ATAK integration." />
+  <meta property="og:image" content="https://ethertech.org/preview.jpg" />
+  <meta property="og:url" content="https://ethertech.org/atakrr/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Goatcounter (optional) -->
+  <script data-goatcounter="https://ethertech.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+  <!-- Left nav (same vibe as root site) -->
+  <nav>
+    <h3><a href="https://www.ethertech.org/">ethertech.org</a></h3>
+    <h3><a href="https://jackd.ethertech.org/support.html">support</a></h3>
+    <a href="https://jackd.ethertech.org/support.html">IT/Networking</a>
+    <a href="https://jackd.ethertech.org/creativity.html">Creativity</a>
+    <br>
+    <h3><a href="https://theplateaus.neocities.org/">plateaus</a></h3>
+    <a href="https://www.tumblr.com/theplateaus">ON TUMBLR</a>
+    <a href="https://bush-whale-713.notion.site/The-Plateaus-1d0969c50c7180f3811fd194901d96ac">IN THE ARCHIVES</a>
+    <a href="https://github.com/jack-driscoll/the-plateaus">ON GITHUB</a>
+    <a href="https://theplateaus.neocities.org/">ON NEOCITIES</a>
+    <br>
+    <h3><a href="https://jackd.ethertech.org/">jackd</a></h3>
+    <a href="https://jackd.ethertech.org/">JACK'D BIO</a>
+    <a href="http://jackd.freeshell.org/">JACK'D on SDF</a>
+    <br>
+	<h3><a href="https://www.ethertech.org/wharf/">WHARF</a></h3>
+    <a href="https://www.ethertech.org/atakrr/">ATAKRR</a>
+    <a href="#overview">Overview</a>
+    <a href="#features">Features</a>
+    <a href="#how">How it works</a>
+    <a href="#what">What you get</a>
+    <a href="#roadmap">Roadmap</a>
+    <a href="#contrib">Contributing</a>
+  </nav>
+
+  <main id="ata">
+    <div class="content">
+
+      <!-- ASCII header -->
+  <div class="main">
+    <pre class="ascii">
+                                                                       
+  _____            ____   ____       _____        _____         _____  
+ |\    \   _____  |    | |    |  ___|\    \   ___|\    \   ____|\    \ 
+ | |    | /    /| |    | |    | /    /\    \ |    |\    \ |    | \    \
+ \/     / |    || |    |_|    ||    |  |    ||    | |    ||    |______/
+ /     /_  \   \/ |    .-.    ||    |__|    ||    |/____/ |    |----'\ 
+|     // \  \   \ |    | |    ||    .--.    ||    |\    \ |    |_____/ 
+|    |/   \ |    ||    | |    ||    |  |    ||    | |    ||    |       
+|\ ___/\   \|   /||____| |____||____|  |____||____| |____||____|       
+| |   | \______/ ||    | |    ||    |  |    ||    | |    ||    |       
+ \|___|/\ |    | ||____| |____||____|  |____||____| |____||____|       
+    \(   \|____|/   \(     )/    \(      )/    \(     )/    )/         
+     '      )/       '     '      '      '      '     '     '          
+            '                                                          
+
+    WHARF: Handles All Radio Frequencies
+    A Research, Analysis, Development & Deployment Framework for RF
+    </pre>
+
+    <section id="overview">
+      <h1>WHARF Overview</h1>
+      <p><kbd>WHARF</kbd> is the backend inference engine and operator console behind <kbd>ATAKRR</kbd>. It enables dataset coordination, deferred task queuing, signal ingest and geolocation processing, and integration with remote Fog Nodes. Built for asynchronous RF workflows and ground-truth operator workflows.</p>
+    </section>
+
+    <section id="features">
+      <h2>Key Features</h2>
+      <ul>
+        <li>☁️ Core RF backend for ATAKRR with modular design</li>
+        <li>📡 Real-time AMC + signal recognition from multiple sources</li>
+        <li>📍 Geolocation via GPS, Wi-Fi, BLE (from Android agents)</li>
+        <li>🛰️ Delay-tolerant remote tasks via satellite-ready protocols</li>
+        <li>📦 Outputs to CoT, KML, and ATAK heatmaps</li>
+        <li>🔌 Python-native modules, Redis & Celery orchestration</li>
+        <li>🛠️ Operator console with replay, tagging, and eval support</li>
+        <li>♻️ Model retraining and runtime switching</li>
+      </ul>
+    </section>
+
+    <section id="modules">
+      <h2>Speculative Directory Layout</h2>
+      <pre><code>/wharf
+├── /api              # REST interface
+├── /frontend         # Web UI for operators
+├── /harbour          # Dataset intake, tagging, parsing
+├── /sig_spawn        # Synthetic signal generation
+├── /sig_sail         # Task routing & signal object mgmt
+├── /sig_snarf        # ML inference modules (DAE, CVCNN, etc)
+├── /sig_moor         # Preprocessing filters & transforms
+├── /shipyard         # Training engine & pipelines
+├── /marina           # Configuration & experiment mgmt
+├── /barge            # Database & envelope schemas
+├── /tests            # Integration and validation scripts
+└── README.md
+      </code></pre>
+    </section>
+
+    <section id="repo">
+      <h2>Repository</h2>
+      <p>📁 Source: <a href="https://github.com/ethertech-org/wharf">github.com/ethertech-org/wharf</a></p>
+      <p>🌐 Website: <a href="https://ethertech.org/wharf/">ethertech.org/wharf</a></p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p><kbd>Fitz / Jacked Up</kbd> – Chief Engineer & RF Phantom</p>
+      <p>🔗 <a href="https://ethertech.org/">ethertech.org</a></p>
+    </section>
+  </div>
+
+  <footer>
+    <p class="footer">🐺 WHARF · Handles All Radio Frequencies</p>
+  </footer>
+  </main>
+
+  <div class="footer">
+    <p>ATAKRR — a FITZ &amp; LUPA joint</p>
+  </div>
+</body>
+</html>
