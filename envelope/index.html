@@ -58,6 +58,15 @@
       font-size: 0.9rem;
       color: #888;
     }
+	@keyframes soft-glitch {
+	  0% { transform: translateX(0); }
+	  30% { transform: translateX(-1px); }
+	  60% { transform: translateX(2px); }
+	  100% { transform: translateX(0); }
+	}
+	.glitch-text:hover {
+		animation: soft-glitch 0.3s infinite;
+	}
   </style>
 	<!-- Open Graph (Facebook/Discord/MetaFilter) -->
 	<meta property="og:title" content="The Envelope | Ethertech Global Industries" />
@@ -77,9 +86,9 @@
 </head>
 <body>
 
-  <header>
+  <header class="glitch-text">
     <img src="/envelope/envelope_banner.jpg" />
-    <h1>A regenerative creative hub for energy, culture, and community</h1>
+    <h1><a href="/envelope/EnvelopePitchDeck.pdf">A regenerative creative hub for energy, culture, and community</a></h1>
   </header>
 
   <div class="section">
@@ -131,7 +140,7 @@
   <div class="section">
   <img src="/envelope/connect.png" />
     <h2>Connect</h2>
-    <p><a href="/envelope/EnvelopePitchDeck.pdf">Download our Pitch Deck</a></p>
+    <p><a href="/envelope/EnvelopePitchDeck.pdf">Download our Pitch Deck<br /><img src="/envelope/see_pitch.png" /></a></p>
     <p>Contact us: <a href="mailto:envelope@ethertech.org">envelope@ethertech.org</a></p>
     <p>Phone: (414) 659-3208</p>
   </div>
